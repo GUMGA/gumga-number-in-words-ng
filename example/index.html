@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="yourApp">
+
+<head>
+  <title>Gumga Number in Words</title>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://gumga.github.io/layout/dist/gumga-layout.css">
+
+    <style media="screen">
+      body{
+        background: #f5f5f5;
+      }
+      .disponivel{
+        color: red !important;
+      }
+      .nao-disponivel:hover{
+        color: red !important;
+      }
+      html {
+        touch-action: manipulation;
+      }
+    </style>
+</head>
+
+<body ng-controller="ctrl">
+  <div class="gumga-layout">
+
+      <div class="container">
+        <h1>Ex 1: {{ primeiroValor | gumgaNumberInWords:true }}</h1>
+        <h1>Ex 2: {{ segundoValor }}</h1>
+      </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../node_modules/angular/angular.min.js"></script>
+  <script src="../dist/gumga-number-in-words.js"></script>
+
+  <script>
+    angular.module('yourApp', ['gumga.numberinwords'])
+      .config(function ($httpProvider) {
+      })
+      .controller('ctrl', ['$scope', '$filter',
+        function ($scope, $filter) {
+
+          $scope.primeiroValor = '15.000';
+
+          $scope.segundoValor = $filter('gumgaNumberInWords')('20', true);
+
+      }
+      ])
+  </script>
+</body>
+</html>

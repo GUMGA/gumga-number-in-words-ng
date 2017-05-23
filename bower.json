@@ -1,0 +1,26 @@
+{
+  "name": "gumga-number-in-words-ng",
+  "version": "1.0.0",
+  "description": "Gumga Number In Words",
+  "main": "./src/gumga-number-in-words.js",
+  "authors": [
+    "Gumga Tecnologia da Informação S/A"
+  ],
+  "license": "LGPL-3.0",
+  "keywords": [
+    "gumga",
+    "controller",
+    "angular 1.x"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.8"
+  }
+}
